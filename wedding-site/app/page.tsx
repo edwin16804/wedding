@@ -8,6 +8,8 @@ interface WeddingDetail {
   date: string;
   time: string;
   location: string;
+  link: string;
+
 }
 
 interface EngagementDetail {
@@ -15,6 +17,7 @@ interface EngagementDetail {
   date: string;
   time: string;
   location: string;
+  link: string;
 }
 
 export default function Home() {
@@ -24,43 +27,42 @@ export default function Home() {
   const weddingDetails: WeddingDetail[] = [
     {
       title: 'Ceremony',
-      date: 'August 4, 2023',
+      date: 'January 3, 2025',
       time: '4:00 PM',
-      location: 'The Grand Palace',
+      location: 'Christ the King Church, Loyola College Campus, Chennai',
+      link: 'https://maps.app.goo.gl/aLC3diKvXpkGUPhW9?g_st=ipc',
     },
     {
       title: 'Reception',
-      date: 'August 4, 2023',
-      time: '7:00 PM',
-      location: 'Royal Gardens',
-    },
-    {
-      title: 'Dress Code',
-      date: 'Formal Attire',
-      time: 'Royal Colors',
-      location: 'Purple & Gold Theme',
+      date: 'January 3, 2025',
+      time: '6:30 PM onwards',
+      location: 'Hotel Savera, Chennai',
+      link: 'https://maps.app.goo.gl/2YjCgDSzJSBhfaB66?g_st=ipc',
     },
   ];
 
   const EngagementDetails: EngagementDetail[] = [
     {
+      title: 'Pre-Engagement',
+      date: 'December 27, 2025',
+      time: '7:30 PM',
+      location: 'Courtyard by Marriott, Vadodara',
+      link: 'https://maps.app.goo.gl/11G1jhafShfnhNFQ7?g_st=ipc',
+    },
+    {
       title: 'Engagement',
-      date: 'August 4, 2023',
-      time: '4:00 PM',
-      location: 'The Grand Palace',
+      date: 'December 28, 2025',
+      time: '3:30 PM',
+      location: 'Rosary Cathedral Church, Vadodara',
+      link: 'https://maps.app.goo.gl/9XEx2nmzeKjuvQ1cA?g_st=ipc',
     },
     {
       title: 'Reception',
-      date: 'August 4, 2023',
-      time: '7:00 PM',
-      location: 'Royal Gardens',
-    },
-    {
-      title: 'Dress Code',
-      date: 'Formal Attire',
-      time: 'Royal Colors',
-      location: 'Purple & Gold Theme',
-    },
+      date: 'December 28, 2025',
+      time: '7:30 PM onwards',
+      location: 'Laxmi Vilas Palace, Vadodara',
+      link: 'https://maps.app.goo.gl/STCSp5pAQFiB7w5v7?g_st=ipc',
+    }
   ];
 
 
@@ -70,7 +72,7 @@ export default function Home() {
         <Hero />
       </motion.div>
 
-      {/* Our story Section */}
+      {/* Welcome Section */}
       <section
         style={{
           minHeight: '100vh',
@@ -78,7 +80,13 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(to bottom, rgba(245, 240, 224, 0.5), rgba(255, 248, 231, 0.8))',
+          backgroundImage: `
+      linear-gradient(to bottom, rgba(255, 248, 231, 0.6), rgba(245, 240, 224, 0.8)),
+      url('/couple.jpg')
+    `,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
 
@@ -88,7 +96,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
           style={{
-            maxWidth: '900px',
+            maxWidth: '800px',
             textAlign: 'center',
           }}
         >
@@ -96,28 +104,28 @@ export default function Home() {
             style={{
               fontSize: 'clamp(3rem, 6vw, 5rem)',
               marginBottom: '50px',
-              color: '#D4AF37',
+              color: '#000000',
               fontWeight: '400',
               letterSpacing: '0.1em',
             }}
           >
-            Our Story
+            Join Our Celebration
           </h2>
           <p
             style={{
               fontSize: 'clamp(1.2rem, 2vw, 1.8rem)',
               lineHeight: '2',
-              color: '#B7B09F',
+              color: '#000000',
+              marginBottom: '50px',
               fontWeight: '300',
             }}
           >
-            Two hearts, two souls, united in love. Our journey began with a
-            chance encounter that blossomed into a beautiful friendship, and
-            eventually, a love that knew no bounds. Today, we celebrate not just
-            our union, but the beginning of forever together.
+            Your presence would make our special day complete
           </p>
         </motion.div>
       </section>
+
+
 
       {/* Engagement details Section */}
       <section
@@ -130,7 +138,7 @@ export default function Home() {
           background: 'linear-gradient(to bottom, rgba(255, 248, 231, 0.3), rgba(245, 240, 224, 0.5))',
         }}
       >
-          <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -187,37 +195,101 @@ export default function Home() {
                 >
                   {EngagementDetail.title}
                 </h3>
+
+                {/* Date */}
                 <p
                   style={{
                     fontSize: '1.3rem',
                     color: '#B7B09F',
                     marginBottom: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px'
                   }}
                 >
+                  {/* Calendar Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
                   {EngagementDetail.date}
                 </p>
+
+                {/* Time */}
                 <p
                   style={{
                     fontSize: '1.3rem',
                     color: '#B7B09F',
                     marginBottom: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
                   }}
                 >
+                  {/* Clock Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
                   {EngagementDetail.time}
                 </p>
+
+                {/* Plain Location Text */}
                 <p
                   style={{
                     fontSize: '1.3rem',
                     color: '#B7B09F',
+                    marginBottom: '10px',
+                    display: 'flex',
+                    alignItems: 'left',
+                    justifyContent: 'left',
+                    gap: '2px'
                   }}
                 >
+                  {/* Pin Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+                    <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   {EngagementDetail.location}
+                </p>
+
+                {/* Link */}
+                <p
+                  style={{
+                    fontSize: '1.3rem',
+                    color: '#B7B09F',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  {/* Link Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M10 13a5 5 0 0 1 7-7l1 1" />
+                    <path d="M14 11a5 5 0 0 1-7 7l-1-1" />
+                    <line x1="8" y1="16" x2="16" y2="8" />
+                  </svg>
+
+                  <a
+                    href={EngagementDetail.link}
+                    target="_blank"
+                    style={{ color: '#B7B09F', textDecoration: 'underline' }}
+                  >
+                    Location
+                  </a>
                 </p>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </section>
+
 
       {/* Wedding details Section */}
       <section
@@ -260,7 +332,7 @@ export default function Home() {
               gap: '50px',
             }}
           >
-            {weddingDetails.map((detail, index) => (
+            {weddingDetails.map((WeddingDetail, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -285,33 +357,96 @@ export default function Home() {
                     fontWeight: '600',
                   }}
                 >
-                  {detail.title}
+                  {WeddingDetail.title}
                 </h3>
+
+                {/* Date */}
                 <p
                   style={{
                     fontSize: '1.3rem',
                     color: '#B7B09F',
                     marginBottom: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px'
                   }}
                 >
-                  {detail.date}
+                  {/* Calendar Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                  {WeddingDetail.date}
                 </p>
+
+                {/* Time */}
                 <p
                   style={{
                     fontSize: '1.3rem',
                     color: '#B7B09F',
                     marginBottom: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
                   }}
                 >
-                  {detail.time}
+                  {/* Clock Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  {WeddingDetail.time}
                 </p>
+
+                {/* Plain Location Text */}
                 <p
                   style={{
                     fontSize: '1.3rem',
                     color: '#B7B09F',
+                    marginBottom: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '2px'
                   }}
                 >
-                  {detail.location}
+                  {/* Pin Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+                    <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  {WeddingDetail.location}
+                </p>
+
+                {/* Link */}
+                <p
+                  style={{
+                    fontSize: '1.3rem',
+                    color: '#B7B09F',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                  }}
+                >
+                  {/* Link Icon */}
+                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M10 13a5 5 0 0 1 7-7l1 1" />
+                    <path d="M14 11a5 5 0 0 1-7 7l-1-1" />
+                    <line x1="8" y1="16" x2="16" y2="8" />
+                  </svg>
+
+                  <a
+                    href={WeddingDetail.link}
+                    target="_blank"
+                    style={{ color: '#B7B09F', textDecoration: 'underline' }}
+                  >
+                    Location
+                  </a>
                 </p>
               </motion.div>
             ))}
@@ -319,51 +454,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* RSVP Section */}
-      <section
-        style={{
-          minHeight: '100vh',
-          padding: '100px 50px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: 'linear-gradient(to bottom, rgba(255, 248, 231, 0.3), rgba(245, 240, 224, 0.5))',
-        }}
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          style={{
-            maxWidth: '800px',
-            textAlign: 'center',
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 'clamp(3rem, 6vw, 5rem)',
-              marginBottom: '50px',
-              color: '#D4AF37',
-              fontWeight: '400',
-              letterSpacing: '0.1em',
-            }}
-          >
-            Join Our Celebration
-          </h2>
-          <p
-            style={{
-              fontSize: 'clamp(1.2rem, 2vw, 1.8rem)',
-              lineHeight: '2',
-              color: '#B7B09F',
-              marginBottom: '50px',
-              fontWeight: '300',
-            }}
-          >
-            Your presence would make our special day complete.
-          </p>
-        </motion.div>
-      </section>
 
       {/* Footer */}
       <footer
@@ -382,16 +472,6 @@ export default function Home() {
           }}
         >
           WITH LOVE, ANISHA & AKASH
-        </p>
-        <p
-          style={{
-            fontSize: '1rem',
-            color: '#FFF8E7',
-            marginTop: '20px',
-            opacity: 0.7,
-          }}
-        >
-          August 4, 2023
         </p>
       </footer>
     </main>
