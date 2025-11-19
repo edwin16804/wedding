@@ -53,12 +53,13 @@ export default function Hero() {
           position: 'relative',
           zIndex: 2,
           textAlign: 'center',
-          marginLeft: '0%',
           width: '100%',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+          alignItems: 'center',
+          gap: 'clamp(1rem, 4vw, 3rem)', // Responsive gap between name and &
         }}
       >
         <motion.h1
@@ -66,13 +67,8 @@ export default function Hero() {
             fontSize: 'clamp(6rem, 17vw, 15rem)',
             fontWeight: '400',
             letterSpacing: '0.1em',
-            marginBottom: '0',
             textTransform: 'uppercase',
             color: '#D4AF37',
-            position: 'absolute',
-            left: '2vw',
-            top: '3vh',
-            textAlign: 'left',
             lineHeight: 0.85,
           }}
         >
@@ -85,12 +81,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           style={{
             fontSize: 'clamp(8rem, 12vw, 15rem)',
-            margin: '20px 0',
             color: '#D4AF37',
-            position: 'absolute',
-            left: '45vw',
-            top: '30vh',
-            zIndex: 2,
           }}
         >
           &
@@ -101,14 +92,8 @@ export default function Hero() {
             fontSize: 'clamp(6rem, 17vw, 15rem)',
             fontWeight: '400',
             letterSpacing: '0.1em',
-            marginTop: '0',
-            marginBottom: '10',
             textTransform: 'uppercase',
             color: '#D4AF37',
-            position: 'absolute',
-            right: '2vw',
-            bottom: '6vh',
-            textAlign: 'right',
             lineHeight: 0.85,
           }}
         >
@@ -127,7 +112,7 @@ export default function Hero() {
             fontWeight: '300',
           }}
         >
-        
+
         </motion.div>
       </motion.div>
 

@@ -191,6 +191,7 @@ export default function Home() {
                     color: '#D4AF37',
                     marginBottom: '20px',
                     fontWeight: '600',
+                    textAlign: 'center', // Center the title
                   }}
                 >
                   {EngagementDetail.title}
@@ -199,17 +200,28 @@ export default function Home() {
                 {/* Date */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     marginBottom: '10px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px'
+                    justifyContent: 'center', // Center the content
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    flexWrap: 'wrap',
                   }}
                 >
                   {/* Calendar Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <line x1="16" y1="2" x2="16" y2="6" />
                     <line x1="8" y1="2" x2="8" y2="6" />
@@ -221,17 +233,28 @@ export default function Home() {
                 {/* Time */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     marginBottom: '10px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
+                    justifyContent: 'center', // Center the content
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    flexWrap: 'wrap',
                   }}
                 >
                   {/* Clock Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
@@ -241,36 +264,66 @@ export default function Home() {
                 {/* Plain Location Text */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     marginBottom: '10px',
                     display: 'flex',
-                    alignItems: 'left',
-                    justifyContent: 'left',
-                    gap: '2px'
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    lineHeight: '1.4',
+                    maxWidth: '100%', // Ensure it doesn't exceed container width
                   }}
                 >
                   {/* Pin Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
-                  {EngagementDetail.location}
+                  <span 
+                    style={{ 
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                    }}
+                  >
+                    {EngagementDetail.location}
+                  </span>
                 </p>
 
                 {/* Link */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
+                    justifyContent: 'center', // Center the content
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    flexWrap: 'wrap',
                   }}
                 >
                   {/* Link Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <path d="M10 13a5 5 0 0 1 7-7l1 1" />
                     <path d="M14 11a5 5 0 0 1-7 7l-1-1" />
                     <line x1="8" y1="16" x2="16" y2="8" />
@@ -279,7 +332,11 @@ export default function Home() {
                   <a
                     href={EngagementDetail.link}
                     target="_blank"
-                    style={{ color: '#B7B09F', textDecoration: 'underline' }}
+                    style={{ 
+                      color: '#B7B09F', 
+                      textDecoration: 'underline',
+                      wordBreak: 'break-word'
+                    }}
                   >
                     Location
                   </a>
@@ -355,6 +412,7 @@ export default function Home() {
                     color: '#D4AF37',
                     marginBottom: '20px',
                     fontWeight: '600',
+                    textAlign: 'center', // Center the title
                   }}
                 >
                   {WeddingDetail.title}
@@ -363,17 +421,28 @@ export default function Home() {
                 {/* Date */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     marginBottom: '10px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px'
+                    justifyContent: 'center', // Center the content
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    flexWrap: 'wrap',
                   }}
                 >
                   {/* Calendar Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <line x1="16" y1="2" x2="16" y2="6" />
                     <line x1="8" y1="2" x2="8" y2="6" />
@@ -385,17 +454,28 @@ export default function Home() {
                 {/* Time */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     marginBottom: '10px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
+                    justifyContent: 'center', // Center the content
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    flexWrap: 'wrap',
                   }}
                 >
                   {/* Clock Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
@@ -405,36 +485,66 @@ export default function Home() {
                 {/* Plain Location Text */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     marginBottom: '10px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '2px'
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    lineHeight: '1.4',
+                    maxWidth: '100%', // Ensure it doesn't exceed container width
                   }}
                 >
                   {/* Pin Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
-                  {WeddingDetail.location}
+                  <span 
+                    style={{ 
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                    }}
+                  >
+                    {WeddingDetail.location}
+                  </span>
                 </p>
 
                 {/* Link */}
                 <p
                   style={{
-                    fontSize: '1.3rem',
+                    fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
                     color: '#B7B09F',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
+                    justifyContent: 'center', // Center the content
+                    gap: 'clamp(6px, 1.5vw, 8px)',
+                    flexWrap: 'wrap',
                   }}
                 >
                   {/* Link Icon */}
-                  <svg width="18" height="18" fill="none" stroke="#B7B09F" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg 
+                    width="clamp(16px, 4vw, 18px)" 
+                    height="clamp(16px, 4vw, 18px)" 
+                    fill="none" 
+                    stroke="#B7B09F" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    style={{ flexShrink: 0 }}
+                  >
                     <path d="M10 13a5 5 0 0 1 7-7l1 1" />
                     <path d="M14 11a5 5 0 0 1-7 7l-1-1" />
                     <line x1="8" y1="16" x2="16" y2="8" />
@@ -443,7 +553,11 @@ export default function Home() {
                   <a
                     href={WeddingDetail.link}
                     target="_blank"
-                    style={{ color: '#B7B09F', textDecoration: 'underline' }}
+                    style={{ 
+                      color: '#B7B09F', 
+                      textDecoration: 'underline',
+                      wordBreak: 'break-word'
+                    }}
                   >
                     Location
                   </a>
